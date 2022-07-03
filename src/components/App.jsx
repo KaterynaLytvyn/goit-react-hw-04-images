@@ -15,8 +15,6 @@ export default function App() {
   const [page, setPage] = useState(1)
   const [totalHits, setTotalHits] = useState(0)
 
-  const loadBtn = document.getElementById("load-more");
-
   useEffect(() => {
     if(!filter){
         return
@@ -38,11 +36,7 @@ export default function App() {
 
     }
     fetchData();
-
-    if(loadBtn){
-      loadBtn.scrollIntoView({block: "center", behavior: "smooth"});
-    }
-
+// eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filter, page])
 
 
